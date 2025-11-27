@@ -9,7 +9,7 @@ const plugins = [react(), tailwindcss(), vitePluginManusRuntime()];
 
 export default defineConfig({
   plugins,
-  base: process.env.GITHUB_PAGES ? '/dev-portfolio/' : '/',
+  base: "/AI_Study_Homepagte/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
