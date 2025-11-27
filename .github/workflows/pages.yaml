@@ -31,12 +31,12 @@ jobs:
 
       - name: Build project
         working-directory: dev-portfolio
-        run: npm run build
+        run: GITHUB_PAGES=true npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dev-portfolio/dist/public
+          path: dev-portfolio/dist/public
 
   deploy:
     needs: build
