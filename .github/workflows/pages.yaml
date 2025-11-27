@@ -26,19 +26,17 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: |
-          cd dev-portfolio
-          npm install
+        working-directory: dev-portfolio
+        run: npm install
 
       - name: Build project
-        run: |
-          cd dev-portfolio
-          npm run build
+        working-directory: dev-portfolio
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dev-portfolio/dist
+          path: ./dev-portfolio/dist
 
   deploy:
     needs: build
